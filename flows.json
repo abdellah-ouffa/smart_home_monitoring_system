@@ -1,1 +1,731 @@
-[]
+[
+    {
+        "id": "2a6d2c01d7ccf58c",
+        "type": "tab",
+        "label": "smartHome",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fb019e744db3e9d3",
+        "type": "ui_tab",
+        "name": "Monitoring",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7e39a89600690874",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1769a6970ae43dcd",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "fb019e744db3e9d3",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9b2dbfcbb4e12073",
+        "type": "inject",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Simulate Temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "3f7bef600174bc61",
+                "631521562c5d4f46"
+            ]
+        ]
+    },
+    {
+        "id": "71166e35cd4f4c1d",
+        "type": "inject",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Simulate Humidity",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "0acf9ae7a2cc4f32"
+            ]
+        ]
+    },
+    {
+        "id": "b51145bb16c8ce60",
+        "type": "inject",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Simulate Light Level",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "d65b611819f271be"
+            ]
+        ]
+    },
+    {
+        "id": "3f7bef600174bc61",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "temperature_function",
+        "func": "function msgGenerator(){\n    msg.payload = ((Math.random() * (35 - 20) + 20) * 100) / 100;\n    msg.topic = \"temperature\"\n    return msg;\n}\n\nmsg = msgGenerator();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "2c03a2e9dff30209",
+                "c46f07ccdb6ba993"
+            ]
+        ]
+    },
+    {
+        "id": "0acf9ae7a2cc4f32",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "humidity_function",
+        "func": "function msgGenerator(){\n    msg.payload = Math.random() * (80 - 30) + 20;\n    msg.topic = \"humidity\"\n    return msg;\n}\n\nmsg = msgGenerator();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 460,
+        "wires": [
+            [
+                "037b322705166c78",
+                "728d47810651bad1"
+            ]
+        ]
+    },
+    {
+        "id": "d65b611819f271be",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "light_level_function",
+        "func": "function msgGenerator(){\n    msg.payload = Math.random() * 100;\n    msg.topic = \"light levels\"\n    return msg;\n}\n\nmsg = msgGenerator();\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "656a532101c0a313",
+                "688a679d78fb58ff"
+            ]
+        ]
+    },
+    {
+        "id": "08aea6c16f1c42b5",
+        "type": "ui_gauge",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Temperature Gauge",
+        "group": "1769a6970ae43dcd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "35",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 1040,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c46f07ccdb6ba993",
+        "type": "ui_switch",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Temperature_switch",
+        "label": "Temperature Control",
+        "tooltip": "",
+        "group": "1769a6970ae43dcd",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "ab0f1d86f013cd54"
+            ]
+        ]
+    },
+    {
+        "id": "688a679d78fb58ff",
+        "type": "ui_switch",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Light_level_switch",
+        "label": "Light Level Control",
+        "tooltip": "",
+        "group": "1769a6970ae43dcd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 610,
+        "y": 740,
+        "wires": [
+            [
+                "aaa85f07f7c03952"
+            ]
+        ]
+    },
+    {
+        "id": "037b322705166c78",
+        "type": "ui_switch",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Humidity_switch",
+        "label": "Humidity Control",
+        "tooltip": "",
+        "group": "1769a6970ae43dcd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 600,
+        "y": 440,
+        "wires": [
+            [
+                "26133da0faac0fcd"
+            ]
+        ]
+    },
+    {
+        "id": "c928688b6821dd5f",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "check_and_forward_data_function_node",
+        "func": "var temperatureData = flow.get(\"temperature_data\");\nvar humidityData = flow.get(\"humidity_data\");\nvar lightLevelData = flow.get(\"light_level_data\");\nvar switchStateTemperature = flow.get(\"switch_temperature_state\");\nvar switchStateHumidity = flow.get(\"switch_humidity_state\");\nvar switchStateLight = flow.get(\"switch_light_state\");\n// Retrieve the API key from the flow context\nvar apiKey =flow.get('api_key'); \n\n\n// Base URL for thingSpeak\nvar baseUrl = `https://api.thingspeak.com/update?api_key=${apiKey}`;\nvar fieldParams =[];\n\n// messages to send to gauges\nvar messages = [];\n\n\n// Append the fields that have their siwtches ON\n\nif(switchStateTemperature){\n    fieldParams.push(`field1=${temperatureData}`);\n    messages.push({payload:temperatureData,topic:\"temperature\"});\n\n}\nif(switchStateHumidity){\n    fieldParams.push(`field2=${humidityData}`);\n    messages.push({payload:humidityData, topic:\"humidity\"});\n}\nif(switchStateLight){\n    fieldParams.push(`field3=${lightLevelData}`);\n    messages.push({payload:lightLevelData, topic:\"light_level\"});\n\n}\n\n// Construct the final URL\nvar finalUrl = baseUrl + \"&\" + fieldParams.join('&');\n\n// Only send the request if there are fields to update\nif(fieldParams.length > 0){\n    msg.url = finalUrl;\n    msg.data = messages\n    // msg.payload = null;\n    // msg.topic = null;\n    delete msg.topic\n    delete msg.payload;\n    // send messages to the gauges\n    // for(var i = 0; i < messages.length; i++){\n    //     node.send(messages[i]);\n    // }\n\n    // Return the message for the HTTP request\n    return msg;\n}else{\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "16f6dc92a962e3d6",
+                "66d78ffe6c222279",
+                "d6498c91827b24d7",
+                "4416704babfacc1b"
+            ]
+        ]
+    },
+    {
+        "id": "2c03a2e9dff30209",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_temperature_data_function_node",
+        "func": "if(msg.topic === \"temperature\"){\n\n    flow.set(\"temperature_data\",msg.payload);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab0f1d86f013cd54",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_switch_state_temperature_function_node",
+        "func": "// if(msg.topic === \"switch_temperature\"){\n\n//     flow.set(\"switch_state\",msg.payload);\n// }\nvar switchState = msg.payload;\nflow.set(\"switch_temperature_state\",switchState);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 380,
+        "wires": [
+            [
+                "c928688b6821dd5f"
+            ]
+        ]
+    },
+    {
+        "id": "26133da0faac0fcd",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_switch_state_humidity_function_node",
+        "func": "flow.set(\"switch_humidity_state\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "728d47810651bad1",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_humidity_data_function_node",
+        "func": "if(msg.topic === \"humidity\"){\n\n    flow.set(\"humidity_data\",msg.payload);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aaa85f07f7c03952",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_switch_state_light_function_node",
+        "func": "flow.set(\"switch_light_state\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "656a532101c0a313",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "set_light_data_function_node",
+        "func": "if(msg.topic === \"light levels\"){\n\n    flow.set(\"light_level_data\",msg.payload);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03bada3a788b5be5",
+        "type": "http request",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "http_request_for_temperature",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1110,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "631521562c5d4f46",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "api_set_context_flow_function",
+        "func": "flow.set('api_key','LUVNB8IJDDWPEPMC');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ad6d26b37b7a219",
+        "type": "debug",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "54023f91872765fd",
+        "type": "ui_gauge",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Humidity Gauge",
+        "group": "1769a6970ae43dcd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "20",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "diff": false,
+        "className": "",
+        "x": 1040,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "4f6d9def655361af",
+        "type": "ui_gauge",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Light Level Gauge",
+        "group": "1769a6970ae43dcd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Light Levels",
+        "label": "Lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "33",
+        "seg2": "66",
+        "diff": false,
+        "className": "",
+        "x": 1270,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "16f6dc92a962e3d6",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Forward_to_HTTP",
+        "func": "// console.log(msg)\nif(msg.url){\n    console.log(msg.url)\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 320,
+        "wires": [
+            [
+                "03bada3a788b5be5"
+            ]
+        ]
+    },
+    {
+        "id": "66d78ffe6c222279",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Forward_to_temperature_gauge",
+        "func": "let temperatureMsg = null;\n\n\n\n// Iterate through the data array in the msg object \nif(Array.isArray(msg.data)){\n    msg.data.forEach(m => {\n    if (m.topic === \"temperature\"){\n        temperatureMsg = m\n    }\n    })\n}\n\nconsole.log(temperatureMsg);\nreturn temperatureMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 300,
+        "wires": [
+            [
+                "08aea6c16f1c42b5"
+            ]
+        ]
+    },
+    {
+        "id": "d6498c91827b24d7",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Forward_to_humidity_gauge",
+        "func": "let humidityMsg = null;\n\nif(Array.isArray(msg.data)){\n    msg.data.forEach(m => {\n        if(m.topic === \"humidity\"){\n            humidityMsg = m\n        }\n    })\n}\nconsole.log(humidityMsg)\nreturn humidityMsg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 600,
+        "wires": [
+            [
+                "54023f91872765fd"
+            ]
+        ]
+    },
+    {
+        "id": "4416704babfacc1b",
+        "type": "function",
+        "z": "2a6d2c01d7ccf58c",
+        "name": "Forward_to_light_level_gauge",
+        "func": "let lightLevelMsg = null;\n\nif(Array.isArray(msg.data)){\n    msg.data.forEach(m => {\n        if (m.topic === \"light_level\"){\n            lightLevelMsg = m\n        }\n    })\n}\nconsole.log(lightLevelMsg)\nreturn lightLevelMsg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 700,
+        "wires": [
+            [
+                "4f6d9def655361af"
+            ]
+        ]
+    }
+]
